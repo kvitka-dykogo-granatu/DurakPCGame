@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Card">
+    <Position X="0.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AERAAAAAASABAAAAAEAAAAAAAAEAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>Card.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computer">
+    <Position X="8.25" Y="5.75" Width="2.25" />
+    <InheritanceLine Type="Player">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.077" Y="0.172" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAACAAAAAAAAAAAAAAAAABCAAABAAAAAAAA=</HashCode>
+      <FileName>Computer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Deck">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAACAAAQAAAgAAEQAAAAAgCAAAAAAACIIBACAAAAAA=</HashCode>
+      <FileName>Deck.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="9.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAAAkBAAAAAACAAAEAACAAAhEAQADAJA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="User">
+    <Position X="11.25" Y="5.75" Width="2.25" />
+    <InheritanceLine Type="Player">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.465" Y="0.168" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAABAAAAAAAAAAAAAADAAABAAAAAAAA=</HashCode>
+      <FileName>User.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Table">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACAAAgAACIAAQAAAAAAiAAAAAAAAEgAAAAAAAAAAAA=</HashCode>
+      <FileName>Table.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
