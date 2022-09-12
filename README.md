@@ -38,10 +38,14 @@ Here are some screenshots from the game:
 ![Opponent Dummy](https://user-images.githubusercontent.com/99298961/189719963-9e468fc2-d95a-4083-9f73-1707019aa989.jpg)
 
 ### Messages about the end of the game
+
+#### The Computer has won:
 ![Комп'ютер виграв](https://user-images.githubusercontent.com/99298961/189723619-e048df6d-510d-4789-a4b6-3dc19f825e47.jpg)
 
+#### The User has won (yes, Newbie is Your default name, he-he):
 ![Користувач виграв](https://user-images.githubusercontent.com/99298961/189721417-dff3d540-67f9-411b-bb2b-5926ab348bb4.jpg)
 
+#### The draw:
 ![Нічия](https://user-images.githubusercontent.com/99298961/189721449-e0cd05d3-480c-4529-a7ee-005a04c0308f.jpg)
 
 ##Key points of creation
