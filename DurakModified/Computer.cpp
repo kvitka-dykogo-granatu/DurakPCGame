@@ -27,7 +27,6 @@ void Computer::print(int i = 0)const
 
 bool Computer::attack(Table &a)
 {
-	//system("pause");
 	system("cls");
 	bool res = 0;
 	Card min;	
