@@ -1,8 +1,6 @@
 #include "User.h"
 CONSOLE_SCREEN_BUFFER_INFO csbuf_user;
 HANDLE hStdOut_user = GetStdHandle(STD_OUTPUT_HANDLE);
-//char l[6] = { char(218), char(196), char(191), char(179), char(217), char(192) };
-//char d_l[6] = { char(201), char(205), char(187), char(186), char(188), char(200) };
 
 
 User::User():Player()
@@ -66,18 +64,7 @@ bool User::attack(Table &a)
 	GetConsoleScreenBufferInfo(hStdOut_user, &csbuf_user);
 	SetConsoleTextAttribute(hStdOut_user, BACKGROUND_GREEN | 7);
 	COORD poss = { 10, 22 };
-	//for (int i = 0; i < csbuf_user.dwMaximumWindowSize.X; i++)
-	//{
-	//	/*tempor = (char)i % 4 + 3;
-	//	if(tempor==3|| tempor==4)
-	//		SetConsoleTextAttribute(hStdOut_user, BACKGROUND_GREEN | 12);
-	//	else
-	//		SetConsoleTextAttribute(hStdOut_user, BACKGROUND_GREEN | 0);*/
-	//	cout << (char)(i % 4 + 3);
-	//}
-	////	COORD poss = { csbuf_user.dwMaximumWindowSize.X / 2 - 50, 21 };
-	//SetConsoleTextAttribute(hStdOut_user, BACKGROUND_GREEN | 7);
-	//poss.Y += 2;
+
 	string g;
 	bool stop = 0;
 	bool k = 0;
@@ -157,70 +144,12 @@ bool User::attack(Table &a)
 				}
 				
 			}
-			/*else
-			{
-				if (a.Battle.size() == 0)
-				{
-					cout << "Choose any card to attack!" << endl;
-					g = "empty";
-				}
-			}
-			k = 0;
-			m = 1;*/
 
 				
 		}
 	} while (!stop && a.Battle.size() < a.Battle_max_size && !empty());
 	return res;
-		//if (g.size() != 0) {//if not Enter
-		//	for (int i = 0; i < g.size(); ++i)//check if it is a number
-		//		if (!isdigit(g.c_str()[i]))
-		//			m = 0;
-		//	if (!m)
-		//		cout << "Error! It's not a number!" << endl;
-		//	else
-		//		if (getSize() <= stoi(g) - 1)//check if it matches the size of the hand_deck
-		//			cout << "Error! It's not a suitable number!" << endl;
-		//		else {
-		//			j = stoi(g) - 1;
-		//	 
-		//	if (a.Battle.size()>0) {//if we can compare rank with other cards on the table
-		//		for (int i = 0; i < a.Battle.size(); i++)
-		//		{
-		//			if (a.Battle[i][0].getRank() == hand[j].getRank() || a.Battle[i][1].getRank() == hand[j].getRank())
-		//			{
-		//				k = 1;
-		//				break;
-		//			}
-		//		}	
-		//		if(k==0)
-		//			{
-		//				cout << "Cards' rank doesn't match! Change the card or finish your choice by pressing 'Enter'" << endl;
-		//				continue; 
-		//			}
-		//		
-		//	}
-		//	array<Card, 2> tmp;
-		//	tmp[0] = hand[j];
-		//	a.Battle.push_back(tmp);
-		//	remove(hand[j]);
-		//	res = 1;
-		//	
-		//	cout << "Got it!" << endl;
-		//	poss.Y++; printed_rows++; SetConsoleCursorPosition(hStdOut_user, poss);
-		//	}
 
-		//}
-		//else
-		//{
-		//	if (a.Battle.size() == 0)
-		//	{
-		//		cout << "Choose any card to attack!" << endl;
-		//		g = "empty";
-		//	}
-		//}
-		//k = 0;
-		//m = 1;
 }
 
 bool User::defend(Table &a)
@@ -305,9 +234,7 @@ bool User::defend(Table &a)
 							for (int i = 0; i < a.Battle.size(); i++){
 								if (!a.Battle[i][1].getPower())
 								{
-									/*SetConsoleCursorPosition(hStdOut_user, poss);
-									cout << "There are some unbeaten cards on the table!" << endl;
-									poss.Y++; printed_rows++; SetConsoleCursorPosition(hStdOut_user, poss);*/
+									
 									unbeaten_curr++;
 								}
 								
@@ -317,27 +244,9 @@ bool User::defend(Table &a)
 								return false;
 							unbeaten_prev = unbeaten_curr;
 							unbeaten_curr = 0;
-							
-						/*
-							flag = 0;
-							space_cnt++;
-							if (a.Battle.size() == 1 && !a.Battle[0][1].getPower())
-								return false;
-							else {
-								for (int i = 1; i < a.Battle.size(); i++)
-								{
-									if (!a.Battle[i][1].getPower() && a.Battle[i][0].getRank() == a.Battle[i - 1][0].getRank() && space_cnt > a.Battle.size())
-										return false;
-								}
-							}*/
+						
 						}
-									  /*break;
-						case KEY_BACKSPACE: {
-							flag = 0;
-							
-							if (a.Battle.size() == 1 && !a.Battle[0][1].getPower())
-								return false;
-						}*/
+
 						default:break;
 						}
 
@@ -347,47 +256,6 @@ bool User::defend(Table &a)
 			} while (c_cnt != o_cnt);
 		}
 		errors = 0;
-		/*if (a.Battle[i][1].getPower() == 0)
-		{
-			c_cnt++;
-			do {
-				SetConsoleCursorPosition(hStdOut_user, poss);
-				cout << "Choose the card to defend (numbers from 1 to " << getSize() << ") or press 'Enter' to take" << endl;
-				getline(cin, g);
-				if (g.size() != 0) {
-					for (int i = 0; i<g.size(); ++i)
-						if (!isdigit(g.c_str()[i]))
-							m = 0;
-					if (!m)
-						cout << "Error! It's not a number!" << endl;
-					else
-						if (getSize() <= stoi(g) - 1)
-							cout << "Error! It's not a suitable number!" << endl;
-						else {
-							j = stoi(g) - 1;
-
-
-							if (a.Battle[i][0].getPower() < hand[j].getPower() && (a.Battle[i][0].getSuit() == hand[j].getSuit() || hand[j].getSuit() == a.deck.getTrumpSuit()))
-							{
-								a.Battle[i][1] = hand[j];
-								remove(hand[j]);
-								o_cnt++;
-								cout << "Got it!" << endl;
-							}
-							else
-							{
-								cout << "Error! Try another card or take!" << endl;
-								errors++;
-								if (errors >= 5)
-									cout << "It seems that you don't know what to do. Maybe it's better to take cards?";
-							}
-						}
-				}
-				else
-					return false;
-			} while (c_cnt != o_cnt);
-		}
-		errors = 0;*/
 	}
 	return true;
 
