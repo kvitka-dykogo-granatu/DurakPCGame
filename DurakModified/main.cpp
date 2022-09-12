@@ -8,18 +8,7 @@
 #include "drawing.h"
 CONSOLE_SCREEN_BUFFER_INFO csbuf;
 HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-//#define GREEN 160
-//#define BLUE 159
-//#define RED 192
-//#define PINK 208
-//#define YELLOW 224
-//#define INFECTED 240
 
-//#define UNSELECTED 47
-//#define SELECTED 44
-//char l[6] = { char(218), char(196), char(191), char(179), char(217), char(192) };
-//char d_l[6] = { char(201), char(205), char(187), char(186), char(188), char(200) };
-//char assist_l[6] = { '.', '-', '.', '|', '\'', '\'' };
 char lines[6] = { char(218), char(196), char(191), char(179), char(217), char(192) };
 char double_lines[6] = { char(201), char(205), char(187), char(186), char(188), char(200) };
 
@@ -54,13 +43,7 @@ void CompPrint(const Computer &c, const Table&t, COORD pos) {
 	SetConsoleTextAttribute(hStdOut, BACKGROUND_GREEN | WHITE);
 	draw_border(14, 1, { static_cast<SHORT>(pos.X -2), static_cast<SHORT>(pos.Y - 1) }, lines, csbuf, hStdOut);
 }
-//void UserPrint(const User &u, const Computer &c, const Table&t, COORD pos) {
-//	pos.Y += 9;
-//	SetConsoleCursorPosition(hStdOut, pos);
-//	/*cout << u.getName() << ":		"; */
-//	u.print(); cout << endl;
-//
-//}
+
 void TablePrint(const User &u, const Computer &c, const Table&t, COORD pos) {
 	CompPrint(c, t,pos);
 	cout << endl;
@@ -173,39 +156,6 @@ int Round(User &u,Computer &c,Table&t, COORD pos) {
 	return 2;
 }
 
-//
-//void draw_bond(HANDLE h, COORD t, COORD b) {
-//	int lenx = b.X - t.X - 2, leny = b.Y - t.Y;
-//	COORD f = t;
-//	unsigned char c;
-//	SetConsoleCursorPosition(h, f); c = 457; cout << c;
-//	f.X++; c = 461;
-//	for (int i = 0; i < lenx; i++)cout << c;
-//	c = 443; cout << c << endl;
-//	c = 442; f = t;
-//	f.Y++;
-//	for (int i = 0; i < leny - 1; i++) {
-//		SetConsoleCursorPosition(h, f);
-//		f.Y++;
-//		cout << c;
-//	}
-//	SetConsoleCursorPosition(h, f); f.Y++; c = 456;	cout << c;
-//	f.X++; c = 461;
-//	for (int i = 0; i < lenx; i++)cout << c;
-//	c = 444; cout << c << endl;
-//	c = 442; f = b;
-//	f.Y--; f.X--;
-//	for (int i = leny - 1; i > 0; i--) {
-//		SetConsoleCursorPosition(h, f);
-//		f.Y--;
-//		cout << c;
-//	}
-//	f = t;
-//	f.X += 2;
-//	f.Y += 2;
-//	SetConsoleCursorPosition(h, f);
-//
-//}
 
 
 void show_menu(int current, User u) {
@@ -280,12 +230,7 @@ char spaces[1] = { ' ' };
 
 
 void sub_menu(int current) {
-	/*
-						COORD secondary_pos = { 51, 15 };
-					SetConsoleTextAttribute(hStdOut, BACKGROUND_GREEN | WHITE);
-					SetConsoleCursorPosition(hStdOut, secondary_pos);
-					cout << "Choose your opponent:\n"<<endl;
-	*/
+
 
 	GetConsoleScreenBufferInfo(hStdOut, &csbuf);
 	COORD subpos = { 55, 18 };
@@ -347,14 +292,7 @@ void Game(User u, Computer c) {
 	Table t;
 	
 	SetConsoleTextAttribute(hStdOut, BACKGROUND_GREEN | WHITE);
-	//int prev_str = 1;
-	//a.X = 0; a.Y = 0;
-	//b.X = csbuf.srWindow.Right;
-	//b.Y = csbuf.srWindow.Bottom;
-	//m.X = csbuf.srWindow.Right / 2;
-	//m.Y = 2;
-	//lb.X = 2;
-	//lb.Y = prev_str;
+
 	system("cls");
 	COORD pos = { csbuf.dwMaximumWindowSize.X / 2-40, 7 };
 	u.fill(t.deck);
