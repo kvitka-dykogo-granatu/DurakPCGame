@@ -15,7 +15,7 @@ And after the end of the game You return to the main menu.
 
 Simple, right? :)
 
-My cousin taught me this game when I was five, so I believe you, a GitHub user, will definitely figure this out.
+My cousin taught me this game when I was five, so I believe You, a GitHub user, will definitely figure this out.
 
 To make the game even more interesting I've created 3 difficulty levels: Your opponent can be Dummy, CleverForever or even Megamind. They are differ on the ability/frequency of going against the "logic" and taking "impulsive" decisions - f.e. wasting the most powerful cards they have. 
 
