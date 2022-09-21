@@ -1,5 +1,5 @@
 # DurakPCGame
-This project was created as a coursework on C++ (particularly, OOP) in 2021, but only recently I got acquainted with such a great technology as GitHub. Still, it's 100% my work, so I decided that later is better than never - and pushed it right here.
+This pet project grew from a small homework assignment at a computer academy (which I attended a long time ago) to a C++ (specifically OOP) coursework in 2021, and then to a program that I spend so much time fixing and adding new features to. However, only recently I got acquainted with such a great technology as GitHub. Still, it's 100% my work, so I decided that later is better than never - and pushed it right here.
 
 ## So, what is it?
 Durak,  Duren', or, as it should be translated, "A fool", is a popular card game in Ukraine and some other Eastern European countries.
